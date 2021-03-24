@@ -2,21 +2,29 @@ import java.util.HashMap;
 
 public class GerenciaContas {
     private HashMap<Integer, Conta> hashContas;  // <Key, valor>, Key = número da conta, valor = Conta
+    private GerarNumero gerarNumero;
 
     public GerenciaContas() {
         hashContas = new HashMap<>();
+        gerarNumero = new GerarNumero();
     }
 
-    public void novaContaCorrente(int numeroConta) {
+    public int novaContaCorrente() {
+        int numeroConta = gerarNumero.proximo();
         hashContas.put(numeroConta, new ContaCorrente(numeroConta));
+        return numeroConta;
     }
 
-    public void novaContaEspecial(int numeroConta, double limite) {
+    public int novaContaEspecial(double limite) {
+        int numeroConta = gerarNumero.proximo();
         hashContas.put(numeroConta, new ContaEspecial(numeroConta, limite));
+        return numeroConta;
     }
 
-    public void novaContaPoupanca(int numeroConta) {
+    public int novaContaPoupanca() {
+        int numeroConta = gerarNumero.proximo();
         hashContas.put(numeroConta, new ContaPoupanca(numeroConta));
+        return numeroConta;
     }
 
     public boolean depositar(int numeroConta, double valor) {
