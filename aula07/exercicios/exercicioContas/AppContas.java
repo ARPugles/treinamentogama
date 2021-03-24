@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AppContas {
@@ -7,11 +6,8 @@ public class AppContas {
         int opcao;
         int numeroConta;
         double limite, valor;
-        ContaCorrente cc;
-        ContaEspecial ce;
-        ContaPoupanca cp;
 
-        ArrayList<Conta> listaContas = new ArrayList<>();
+        GerenciaContas contas = new GerenciaContas();
 
         do {
             System.out.println("1- nova conta corrente");
@@ -28,8 +24,7 @@ public class AppContas {
                 case 1:
                     System.out.println("Informe o número da conta: ");
                     numeroConta = teclado.nextInt();
-                    cc = new ContaCorrente(numeroConta);
-                    listaContas.add(cc);
+                    contas.novaContaCorrente(numeroConta);
                     break; // interrompe a execução do case
 
                 case 2:
@@ -37,15 +32,13 @@ public class AppContas {
                     numeroConta = teclado.nextInt();
                     System.out.println("Informe o limite da conta: ");
                     limite = teclado.nextDouble();
-                    ce = new ContaEspecial(numeroConta, limite);
-                    listaContas.add(ce);
+                    contas.novaContaEspecial(numeroConta,limite);
                     break;
 
                 case 3:
                     System.out.println("Informe o número da conta: ");
                     numeroConta = teclado.nextInt();
-                    cp = new ContaPoupanca(numeroConta);
-                    listaContas.add(cp);
+                    contas.novaContaPoupanca(numeroConta);
                     break;
 
                 case 4:
@@ -53,15 +46,10 @@ public class AppContas {
                     numeroConta = teclado.nextInt();
                     System.out.println("Qual o valor? ");
                     valor = teclado.nextDouble();
-                    for (Conta conta : listaContas) {
-                        if(conta.getNumero() == numeroConta) {
-                            if(conta.deposito(valor)) {
-                                System.out.println("Operação realizada.");
-                            } else {
-                                System.out.println("Falha na operação");
-                            }
-                        break;
-                        }
+                    if(contas.depositar(numeroConta, valor)) {
+                        System.out.println("Operação realizada.");
+                    } else {
+                        System.out.println("Falha na operação");
                     }
                     break;
 
@@ -70,27 +58,17 @@ public class AppContas {
                     numeroConta = teclado.nextInt();
                     System.out.println("Qual o valor? ");
                     valor = teclado.nextDouble();
-                    for (Conta conta : listaContas) {
-                        if(conta.getNumero() == numeroConta) {
-                            if(conta.saque(valor)) {
-                                System.out.println("Operação realizada.");
-                            } else {
-                                System.out.println("Falha na operação");
-                            }
-                        break;
-                        }
+                    if(contas.sacar(numeroConta,valor)) {
+                        System.out.println("Operação realizada.");
+                    } else {
+                        System.out.println("Falha na operação");
                     }
                     break;
 
                 case 6:
                     System.out.println("Informe o número da conta: ");
                     numeroConta = teclado.nextInt();
-                    for (Conta conta : listaContas) {
-                        if(conta.getNumero() == numeroConta) {
-                            System.out.println(conta);
-                            break;
-                        }
-                    }
+                    System.out.println(contas.consultarConta(numeroConta));
                     break;
 
                 case 7:
