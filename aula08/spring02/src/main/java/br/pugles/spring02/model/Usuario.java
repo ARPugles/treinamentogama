@@ -7,10 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity // classe mapeada no banco de dados
+@Entity // classe mapeada no BD
 @Table(name = "usuario")
 public class Usuario {
-
+    
     @Id // chave primária
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 1, 2, 3, ...
     @Column(name = "id")
@@ -58,6 +58,5 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
     
 }
