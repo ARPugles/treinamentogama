@@ -16,10 +16,10 @@ import br.pugles.spring02.model.Usuario;
 import br.pugles.spring02.repo.UsuarioRepo;
 
 @RestController
-@CrossOrigin("*") // aceita requisições de qualquer domínio
+@CrossOrigin("*") //aceita requisições de qq domínio
 @RequestMapping("/user")
 public class UsuarioController {
-
+    
     @Autowired // injeção de dependência
     private UsuarioRepo repo;
 
@@ -27,27 +27,28 @@ public class UsuarioController {
     public ResponseEntity<Usuario> getUser(@PathVariable int id) {
         Usuario usuarioEncontrado = repo.findById(id).orElse(null);
 
-        if(usuarioEncontrado != null) {
+        if(usuarioEncontrado != null) { // achou
             return ResponseEntity.ok(usuarioEncontrado);
-        }
+        }        
         return ResponseEntity.notFound().build();
     }
 
     @GetMapping("/all")
     public List<Usuario> getAllUser() {
-        List<Usuario> lista = (List<Usuario>) repo.findAll();
+        List<Usuario> lista =  (List<Usuario>) repo.findAll();
+
         return lista;
-    }
+    } 
 
     @PostMapping("/login")
     public ResponseEntity<Usuario> login(@RequestBody Usuario userParam) {
         Usuario usuarioEncontrado = repo.findByEmailAndSenha(userParam.getEmail(), userParam.getSenha());
 
         if(usuarioEncontrado != null) { // achou
-            usuarioEncontrado.setSenha("**********");
+            usuarioEncontrado.setSenha("********");
             return ResponseEntity.ok(usuarioEncontrado);
-        }
+        }        
         return ResponseEntity.notFound().build();
     }
-    
+
 }
