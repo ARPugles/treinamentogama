@@ -16,31 +16,19 @@
     <title>Menu Principal</title>
 </head>
 
+
+
 <body onload="validaLogin()">
-    <h3 align="center">Menu Principal</h3>
-    <table border="0" width="100%">
-        <tr>
-            <td align="right">
-                <button class="btn btn-primary" onclick="logout()">Logout</button>
-            </td>
-        </tr>
-        <tr>
-            <td align="left">
-                <div id="user"></div>
-            </td>
-        </tr>
-        <tr>
-            <td align="left">
+    <br>
+    <h3 align="center">Menu Principal</h3><br>
+    <div class="container">
+        <div align="center" class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 div1">
                 <div id="foto"></div>
-            </td>
-        </tr>
-    </table>
-<div class="container d-flex h-50">
-        <!-- Para centralizar na vertical -->
-        <div class="row align-items-center w-100">
-            <!-- Para centralizar na horizontal -->
-            <div class="col-8 mx-auto">
-                <!-- Usar coluna com 8 das 12 disponíveis, com margem automática -->
+                <div id="user"></div><br>
+                <button class="btn btn-primary" onclick="voltarMenu()">Voltar</button><br><br>
+            </div>
+            <div align="center" class="col-lg-9 col-md-9 col-sm-9 div2 align-self-end">
                 <div class="jumbotron">
                     <div class="row">
                         <div class="col">
@@ -53,8 +41,10 @@
                         período</button>
                 </div>
             </div>
+            <div align="center" class="col-lg-1 col-md-1 col-sm-1 div3">
+                <button class="btn btn-primary" onclick="logout()">Logout</button>
+            </div>
         </div>
-
     </div>
 </body>
 
