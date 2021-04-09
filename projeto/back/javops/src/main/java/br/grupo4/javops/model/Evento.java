@@ -12,55 +12,55 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="itmn_evento")
+@Table(name = "itmn_evento")
 public class Evento {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="num_seq")
-	private int numSeq;
-	
-	@Column(name="data_evt", nullable=false)
-	private LocalDate dataEvt;
 
-	@OneToOne
-	@JoinColumn(name="id_alarme")
-	private Alarme alarme;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "num_seq")
+    private int id;
 
-	@OneToOne
-	@JoinColumn(name="id_equip")
-	private Equipamento equipamento;
+    @Column(name = "data_evt")
+    private LocalDate dataevt;
 
-	public int getNumSeq() {
-		return numSeq;
-	}
+    @OneToOne
+    @JoinColumn(name="id_alarme")
+    private Alarme alarme;
 
-	public void setNumSeq(int numSeq) {
-		this.numSeq = numSeq;
-	}
+    @OneToOne
+    @JoinColumn(name="id_equip")
+    private Equipamento equipamento;
 
-	public LocalDate getDataEvt() {
-		return dataEvt;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setDataEvt(LocalDate dataEvt) {
-		this.dataEvt = dataEvt;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public Alarme getAlarme() {
-		return alarme;
-	}
+    public LocalDate getDataevt() {
+        return dataevt;
+    }
 
-	public void setAlarme(Alarme alarme) {
-		this.alarme = alarme;
-	}
+    public void setDataevt(LocalDate data_evt) {
+        this.dataevt = data_evt;
+    }
 
-	public Equipamento getEquipamento() {
-		return equipamento;
-	}
+    public Alarme getAlarme() {
+        return alarme;
+    }
 
-	public void setEquipamento(Equipamento equipamento) {
-		this.equipamento = equipamento;
-	}
+    public void setAlarme(Alarme alarme) {
+        this.alarme = alarme;
+    }
+
+    public Equipamento getEquipamento() {
+        return equipamento;
+    }
+
+    public void setEquipamento(Equipamento equipamento) {
+        this.equipamento = equipamento;
+    }
 
 }

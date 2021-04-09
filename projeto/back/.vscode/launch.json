@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-JavopsApplication<javops>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "br.grupo4.javops.JavopsApplication",
+            "projectName": "javops",
+            "args": ""
+        }
+    ]
+}

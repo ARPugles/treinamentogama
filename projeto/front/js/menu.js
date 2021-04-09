@@ -11,6 +11,14 @@ function validaLogin() {
     document.getElementById("foto").innerHTML = `<img src=${user.linkFoto}>`
 }
 
+function redirecionaAlarmes() {
+    window.location = "dashalarmes.html"
+}
+
+function redirecionaEventos() {
+    window.location = "dasheventos.html"
+}
+
 function logout() {
     localStorage.removeItem("userlogged");
     window.location = "index.html";
