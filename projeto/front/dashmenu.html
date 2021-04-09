@@ -20,28 +20,27 @@
 
 <body onload="validaLogin()">
     <br>
-    <h3 align="center">Menu Principal</h3><br>
+    <h3 align="center"><b>Menu Principal</b></h3><br>
     <div class="container">
         <div align="center" class="row">
-            <div class="col-lg-2 col-md-2 col-sm-2 div1">
+            <div align="left" class="col-lg-3 col-md-3 col-sm-3 div1">
                 <div id="foto"></div>
                 <div id="user"></div><br>
-                <button class="btn btn-primary" onclick="voltarMenu()">Voltar</button><br><br>
             </div>
-            <div align="center" class="col-lg-9 col-md-9 col-sm-9 div2 align-self-end">
+            <div align="center" class="col-lg-6 col-md-6 col-sm-6 div2 align-self-end">
                 <div class="jumbotron">
                     <div class="row">
                         <div class="col">
                             <div class="text-center" id="msgError"></div>
                         </div>
                     </div>
-                    <button class="btn btn-outline-primary" onclick="redirecionaAlarmes()">Ver relatório dos tipos de
+                    <button class="btn btn-primary" onclick="redirecionaAlarmes()">Ver relatório dos tipos de
                         alarmes</button><br><br>
-                    <button class="btn btn-outline-primary" onclick="redirecionaEventos()">Ver relatório de eventos por
+                    <button class="btn btn-primary" onclick="redirecionaEventos()">Ver relatório de eventos por
                         período</button>
                 </div>
             </div>
-            <div align="center" class="col-lg-1 col-md-1 col-sm-1 div3">
+            <div align="right" class="col-lg-3 col-md-3 col-sm-3 div3">
                 <button class="btn btn-primary" onclick="logout()">Logout</button>
             </div>
         </div>

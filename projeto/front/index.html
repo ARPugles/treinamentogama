@@ -16,12 +16,15 @@
 </head>
 
 <body>
-    <h3 align="center">Sistema de Relatório de Eventos</h3>
-    <div class="container d-flex h-100">
+    <br><h3 align="center"><b>ITAUMON - Sistema de Relatório de Eventos</b></h3><br>
+    <div align="center">
+        <img src="imagens/logo-itau-256.png">
+    </div>
+    <div align="center" class="container d-flex h-80">
         <!-- Para centralizar na vertical -->
         <div class="row align-items-center w-100">
             <!-- Para centralizar na horizontal -->
-            <div class="col-8 mx-auto">
+            <div class="col-6 mx-auto">
                 <!-- Usar coluna com 8 das 12 disponíveis, com margem automática -->
                 <div class="jumbotron">
                     <div class="row">
@@ -30,10 +33,11 @@
                         </div>
                     </div>
                     <form>
+                        <h5 align="center">Login</h5><br>
                         <input type="email" class="form-control" placeholder="e-mail / racf" id="txtUser">
-                        <input type="password" class="form-control" placeholder="senha" id="txtSenha">
+                        <input type="password" class="form-control" placeholder="senha" id="txtSenha"><br>
                         <div class="col text-center">
-                            <button class="btn btn-outline-primary" onclick="autenticar(event)">Login</button>
+                            <button class="btn btn-primary" onclick="autenticar(event)">Login</button>
                         </div>
                     </form>
                 </div>
