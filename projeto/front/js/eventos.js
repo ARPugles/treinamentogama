@@ -7,7 +7,7 @@ function validaLogin() {
 
     let user = JSON.parse(userTxt);
 
-    document.getElementById("user").innerHTML = `nome: ${user.nome} RACF ${user.racf}` 
+    document.getElementById("user").innerHTML = `<b>Nome:</b> ${user.nome} <br> <b>RACF:</b> ${user.racf}`
     document.getElementById("foto").innerHTML = `<img src=${user.linkFoto}>`
     
 }
@@ -55,4 +55,8 @@ function exibirDados(listaEventos) {
 
     tabela = tabela + '</table>'
     document.getElementById("tabela").innerHTML = tabela
+}
+
+function voltarMenu() {
+    window.location = "dashmenu.html"
 }

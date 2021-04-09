@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/css/estilo.css">
 
     <script src="/js/eventos.js"></script>
-    
-    <title>Menu</title>
+
+    <title>Relatório de Eventos por Período</title>
 </head>
+
 <body onload="validaLogin()">
-    <div id="user"></div>
-    <div id="foto"></div>
-    <button onclick="logout()">Logout</button>
+    <h3 align="center">Relatório de Eventos por Período</h3>
+    <table border="0" width="100%">
+        <tr>
+            <td align="right">
+                <button class="btn btn-primary" onclick="logout()">Logout</button>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <div id="user"></div>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <div id="foto"></div>
+            </td>
+            <td align="left">
+                <lable>Digite a Data de Início: </lable><input type="date" id="dataInicio"><br><br>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <button class="btn btn-primary" onclick="voltarMenu()">Voltar</button>
+            </td>
+            <td align="left">
+                <lable>Digite a Data Final: <input type="date" id="dataFinal"><br><br>
+            </td>
+        </tr>
+    </table>
     <br>
-    <input type="date" id="dataInicio">
-    <input type="date" id="dataFinal">
-    <button class = "btn btn-primary" onclick="gerarRelatorio()">Gerar</button>
+    <div class="col text-center">
+        <button class="btn btn-primary" onclick="gerarRelatorio()">Gerar Relatório</button>
+    </div>
     <br>
-    <div id="tabela"></div>
+    <div class="table-overflow" id="tabela"></div>
 </body>
+
 </html>

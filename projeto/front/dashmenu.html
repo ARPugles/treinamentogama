@@ -13,13 +13,28 @@
 
     <script src="/js/menu.js"></script>
 
-    <title>Document</title>
+    <title>Menu Principal</title>
 </head>
 
 <body onload="validaLogin()">
-    <div id="user"></div>
-    <div id="foto"></div>
-    <button onclick="logout()">Logout</button><br><br>
+    <h3 align="center">Menu Principal</h3>
+    <table border="0" width="100%">
+        <tr>
+            <td align="right">
+                <button class="btn btn-primary" onclick="logout()">Logout</button>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <div id="user"></div>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <div id="foto"></div>
+            </td>
+        </tr>
+    </table>
 <div class="container d-flex h-50">
         <!-- Para centralizar na vertical -->
         <div class="row align-items-center w-100">

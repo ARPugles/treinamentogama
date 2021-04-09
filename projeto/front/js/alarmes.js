@@ -20,3 +20,26 @@ function exibirDados(listaAlarmes) {
     tabela = tabela + '</table>'
     document.getElementById("tabela").innerHTML = tabela
 }
+
+function validaLogin() {
+    let userTxt = localStorage.getItem("userlogged");
+
+    if(!userTxt) {
+        window.location = "index.html"
+    }
+
+    let user = JSON.parse(userTxt);
+
+    document.getElementById("user").innerHTML = `<b>Nome:</b> ${user.nome} <br> <b>RACF:</b> ${user.racf}`
+    document.getElementById("foto").innerHTML = `<img src=${user.linkFoto}>`
+    
+}
+
+function logout() {
+    localStorage.removeItem("userlogged");
+    window.location = "index.html";
+}
+
+function voltarMenu() {
+    window.location = "dashmenu.html"
+}

@@ -12,10 +12,35 @@
 
     <script src="/js/alarmes.js"></script>
 
-    <title>Tipos de Alarmes</title>
+    <title>Relatório de Tipos de Alarmes</title>
 </head>
-<body>
-    <button class="btn btn-outline-primary" onclick="relatorioAlarmes()">Gerar</button><br>
+<body onload="validaLogin()">
+    <h3 align="center">Relatório de Tipos de Alarmes</h3>
+    <table border="0" width="100%">
+        <tr>
+            <td align="right">
+                <button class="btn btn-primary" onclick="logout()">Logout</button>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <div id="user"></div>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <div id="foto"></div>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <button class="btn btn-primary" onclick="voltarMenu()">Voltar</button>
+            </td>
+        </tr>
+    </table>
+    <div class="col text-center">
+    <button class="btn btn-primary" onclick="relatorioAlarmes()">Gerar Relatório</button><br><br>
+    </div>
     <div id="tabela"></div>
 </body>
 </html>
